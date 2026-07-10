@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "wsview — WebSocket / JSON-RPC 2.0 viewer",
+  "version": "0.1.0",
+  "description": "JSON-RPC 2.0 aware WebSocket inspector: request/response pairing, latency, method filter. DevTools panel.",
+  "minimum_chrome_version": "111",
+  "devtools_page": "devtools.html",
+  "background": { "service_worker": "bg.js" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["inject.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["relay.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

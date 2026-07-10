@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>wsview</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <div class="row">
+    <b class="logo">wsview</b>
+    <span id="dot" class="dot" title="UI feed connection"></span>
+    <span id="target" class="dim">connecting…</span>
+    <span class="spacer"></span>
+    <span id="counts" class="dim"></span>
+  </div>
+  <div class="row">
+    <input id="q" type="search" placeholder="filter — method / id / payload substring" spellcheck="false">
+    <button class="chip on" data-kind="request">req</button>
+    <button class="chip on" data-kind="response">res</button>
+    <button class="chip on" data-kind="notification">notif</button>
+    <button class="chip on" data-kind="error">err</button>
+    <button class="chip on" data-kind="other">other</button>
+    <select id="connSel"><option value="all">all conns</option></select>
+    <span class="spacer"></span>
+    <button id="pause" class="btn">⏸ pause</button>
+    <button id="clear" class="btn">clear</button>
+    <button id="export" class="btn">export</button>
+  </div>
+</header>
+<main>
+  <div id="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:88px">time</th>
+          <th style="width:22px"></th>
+          <th style="width:44px">conn</th>
+          <th style="width:52px">kind</th>
+          <th>method</th>
+          <th style="width:70px">id</th>
+          <th style="width:62px">ms</th>
+          <th style="width:70px">size</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <button id="newpill" hidden>↓ 0 new</button>
+  </div>
+  <aside id="detail" hidden></aside>
+</main>
+<script src="/viewer.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

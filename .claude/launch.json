@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "wsview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start", "--", "--target", "ws://localhost:8890"],
+      "port": 9801
+    }
+  ]
+}

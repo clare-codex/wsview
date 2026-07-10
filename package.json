@@ -1,0 +1,22 @@
+{
+  "name": "wsview",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "demo": "tsx scripts/demo.ts",
+    "sync:ext": "cp public/viewer.js public/style.css extension/panel/",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "tsx": "^4.19.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/ws": "^8.5.12",
+    "typescript": "^5.6.0"
+  }
+}
